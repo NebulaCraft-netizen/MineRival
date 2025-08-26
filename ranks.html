@@ -1,69 +1,190 @@
-<!-- ranks.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MineRival | Ranks</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MineRival | Ranks</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    body { font-family: Arial, sans-serif; background: #0b0b1a; color: #eee; }
-    .container { max-width: 1100px; margin: auto; padding: 40px; }
-    h1 { text-align: center; color: #9b59b6; }
-    table { width: 100%; border-collapse: collapse; margin-top: 30px; }
-    th, td { padding: 15px; text-align: center; border-bottom: 1px solid #444; }
-    th { background: #1c1c2b; }
-    tr:hover { background: #161625; }
-    select { margin: 20px auto; display: block; padding: 8px 12px; border-radius: 6px; border: none; }
-  </style>
+  <script>
+    // Currency Conversion (approx)
+    const rates = {
+      USD: 1,
+      EUR: 0.9,
+      GBP: 0.78,
+      PKR: 278,
+      INR: 83
+    };
+
+    function convertCurrency() {
+      const currency = document.getElementById("currency").value;
+      const elements = document.querySelectorAll("[data-price]");
+      elements.forEach(el => {
+        const usdPrice = parseFloat(el.getAttribute("data-price"));
+        const converted = (usdPrice * rates[currency]).toLocaleString();
+        el.innerText = `${converted} ${currency}`;
+      });
+    }
+  </script>
 </head>
 <body>
-  <div class="container">
-    <h1>Ranks & Pricing</h1>
-    <p style="text-align:center;">Unlock magical powers with in-game money or see the real-world equivalent below.</p>
+  <nav>
+    <div class="logo">MineRival</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ranks.html">Ranks</a></li>
+      <li><a href="rules.html">Rules</a></li>
+      <li><a href="staff.html">Staff</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="info.html">Info</a></li>
+      <li><a href="ip.html">IP</a></li>
+    </ul>
+  </nav>
 
-    <label for="currency">Choose Currency:</label>
-    <select id="currency">
-      <option value="USD">$ USD</option>
-      <option value="EUR">€ EUR</option>
-      <option value="GBP">£ GBP</option>
-      <option value="PKR">₨ PKR</option>
-      <option value="INR">₹ INR</option>
+  <div class="container">
+    <h1>Ranks</h1>
+    <p>Unlock exclusive abilities, perks, and cosmetics by purchasing ranks using in-game money or real currency.</p>
+
+    <label for="currency">Show prices in:</label>
+    <select id="currency" onchange="convertCurrency()">
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="GBP">GBP</option>
+      <option value="PKR">PKR</option>
+      <option value="INR">INR</option>
     </select>
 
-    <table id="ranksTable">
+    <!-- Global Ranks -->
+    <h2>🌍 Global Ranks</h2>
+    <table>
       <thead>
         <tr>
           <th>Rank</th>
-          <th>In-Game Cost</th>
-          <th>Price</th>
           <th>Description</th>
+          <th>In-Game Cost</th>
+          <th>Real Price</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Apprentice</td><td>500k</td><td data-usd="2.50" data-eur="2.30" data-gbp="2.00" data-pkr="700" data-inr="200"></td><td>A beginner in the arts, just starting the magical journey.</td></tr>
-        <tr><td>Acolyte</td><td>3M</td><td data-usd="5.00" data-eur="4.60" data-gbp="4.00" data-pkr="1400" data-inr="400"></td><td>A devoted learner of mystical powers.</td></tr>
-        <tr><td>Shaman</td><td>5M</td><td data-usd="7.50" data-eur="7.00" data-gbp="6.00" data-pkr="2100" data-inr="650"></td><td>Connected to ancient forces, harnessing nature’s magic.</td></tr>
-        <tr><td>Wizard</td><td>10M</td><td data-usd="12.00" data-eur="11.00" data-gbp="9.50" data-pkr="3500" data-inr="1000"></td><td>Respected spellcaster, master of arcane duels.</td></tr>
-        <tr><td>Sorcerer</td><td>20M</td><td data-usd="18.00" data-eur="16.50" data-gbp="14.00" data-pkr="5500" data-inr="1500"></td><td>Bends powerful magic to their will, feared across realms.</td></tr>
-        <tr><td>Archmage</td><td>30M</td><td data-usd="25.00" data-eur="23.00" data-gbp="20.00" data-pkr="7500" data-inr="2000"></td><td>The highest magical order — all bow to your mastery.</td></tr>
+        <tr>
+          <td>Apprentice</td>
+          <td>A beginner in the arts, just starting the magical journey.</td>
+          <td>500,000 coins</td>
+          <td data-price="2">2 USD</td>
+        </tr>
+        <tr>
+          <td>Acolyte</td>
+          <td>A devoted learner of mystical powers.</td>
+          <td>3,000,000 coins</td>
+          <td data-price="5">5 USD</td>
+        </tr>
+        <tr>
+          <td>Shaman</td>
+          <td>Connected to ancient forces, harnessing nature’s magic.</td>
+          <td>5,000,000 coins</td>
+          <td data-price="8">8 USD</td>
+        </tr>
+        <tr>
+          <td>Wizard</td>
+          <td>Respected spellcaster, master of arcane duels.</td>
+          <td>10,000,000 coins</td>
+          <td data-price="12">12 USD</td>
+        </tr>
+        <tr>
+          <td>Sorcerer</td>
+          <td>Bends powerful magic to their will, feared across realms.</td>
+          <td>20,000,000 coins</td>
+          <td data-price="18">18 USD</td>
+        </tr>
+        <tr>
+          <td>Archmage</td>
+          <td>The highest magical order — all bow to your mastery.</td>
+          <td>30,000,000 coins</td>
+          <td data-price="25">25 USD</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Lifesteal Ranks -->
+    <h2>❤️ Lifesteal Ranks</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Description</th>
+          <th>In-Game Cost</th>
+          <th>Real Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Hunter</td>
+          <td>Survivor of the wild, collecting hearts from foes.</td>
+          <td>1,000,000 coins</td>
+          <td data-price="3">3 USD</td>
+        </tr>
+        <tr>
+          <td>Slayer</td>
+          <td>A feared warrior, thriving in lifesteal battles.</td>
+          <td>5,000,000 coins</td>
+          <td data-price="7">7 USD</td>
+        </tr>
+        <tr>
+          <td>Reaper</td>
+          <td>Steals life effortlessly, unmatched in duels.</td>
+          <td>10,000,000 coins</td>
+          <td data-price="12">12 USD</td>
+        </tr>
+        <tr>
+          <td>Warlord</td>
+          <td>Commands the battlefield, lifesteal master.</td>
+          <td>20,000,000 coins</td>
+          <td data-price="18">18 USD</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Practice Ranks -->
+    <h2>⚔️ Practice Ranks</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Description</th>
+          <th>In-Game Cost</th>
+          <th>Real Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Rookie</td>
+          <td>Just entering the arena, eager to learn crystal PvP.</td>
+          <td>500,000 coins</td>
+          <td data-price="2">2 USD</td>
+        </tr>
+        <tr>
+          <td>Challenger</td>
+          <td>Bold fighter, climbing the practice ladder.</td>
+          <td>3,000,000 coins</td>
+          <td data-price="5">5 USD</td>
+        </tr>
+        <tr>
+          <td>Champion</td>
+          <td>Respected crystal duelist, feared in the arena.</td>
+          <td>7,000,000 coins</td>
+          <td data-price="9">9 USD</td>
+        </tr>
+        <tr>
+          <td>Gladiator</td>
+          <td>The ultimate practice warrior, unmatched skill.</td>
+          <td>15,000,000 coins</td>
+          <td data-price="15">15 USD</td>
+        </tr>
       </tbody>
     </table>
   </div>
 
-  <script>
-    const select = document.getElementById("currency");
-    const rows = document.querySelectorAll("#ranksTable tbody tr td:nth-child(3)");
-
-    function updatePrices() {
-      const cur = select.value.toLowerCase();
-      rows.forEach(td => {
-        td.textContent = td.dataset[cur] + " " + select.value;
-      });
-    }
-
-    select.addEventListener("change", updatePrices);
-    window.onload = updatePrices;
-  </script>
+  <footer>
+    <p>© 2025 MineRival. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
