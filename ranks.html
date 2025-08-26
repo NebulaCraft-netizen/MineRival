@@ -1,112 +1,69 @@
-
+<!-- ranks.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>MineRival | Ranks</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MineRival</title>
   <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; background: #0b0b1a; color: #eee; }
+    .container { max-width: 1100px; margin: auto; padding: 40px; }
+    h1 { text-align: center; color: #9b59b6; }
+    table { width: 100%; border-collapse: collapse; margin-top: 30px; }
+    th, td { padding: 15px; text-align: center; border-bottom: 1px solid #444; }
+    th { background: #1c1c2b; }
+    tr:hover { background: #161625; }
+    select { margin: 20px auto; display: block; padding: 8px 12px; border-radius: 6px; border: none; }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="logo" href="index.html">⚔ MineRival</a>
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="ranks.html">Ranks</a>
-        <a href="staff.html">Staff</a>
-        <a href="news.html">News</a>
-        <a href="about.html">About</a>
-        <a href="rules.html">Rules</a>
-        <a class="ip-pill" href="ip.html">IP</a>
-      </nav>
-    </div>
-  </header>
+  <div class="container">
+    <h1>Ranks & Pricing</h1>
+    <p style="text-align:center;">Unlock magical powers with in-game money or see the real-world equivalent below.</p>
 
-<section class="container">
-  <h1 class="section-title">Magical Rank Ladder</h1>
-  <p class="muted">Ranks are purchased with in-game money you earn by grinding. Prices are listed below.</p>
+    <label for="currency">Choose Currency:</label>
+    <select id="currency">
+      <option value="USD">$ USD</option>
+      <option value="EUR">€ EUR</option>
+      <option value="GBP">£ GBP</option>
+      <option value="PKR">₨ PKR</option>
+      <option value="INR">₹ INR</option>
+    </select>
 
-  <div class="rank-grid">
-    <div class="rank-card">
-      <div class="rank-title">Apprentice <span class="price">500k</span></div>
-      <p class="desc">A beginner in the arts, just starting the magical journey.</p>
-      <ul class="perks">
-        <li>[Apprentice] prefix</li>
-        <li>Set 1 home</li>
-        <li>/hat</li>
-        <li>Small daily bonus crate</li>
-      </ul>
-      <button class="btn ghost">Purchase In-Game</button>
-    </div>
-
-    <div class="rank-card">
-      <div class="rank-title">Acolyte <span class="price">3M</span></div>
-      <p class="desc">A devoted learner of mystical powers.</p>
-      <ul class="perks">
-        <li>[Acolyte] prefix • Colored chat</li>
-        <li>Set 2 homes</li>
-        <li>/back • /workbench</li>
-        <li>Daily bonus crate (Improved)</li>
-      </ul>
-      <button class="btn ghost">Purchase In-Game</button>
-    </div>
-
-    <div class="rank-card">
-      <div class="rank-title">Shaman <span class="price">5M</span></div>
-      <p class="desc">Connected to ancient forces, harnessing nature’s magic.</p>
-      <ul class="perks">
-        <li>[Shaman] prefix</li>
-        <li>Set 3 homes</li>
-        <li>/enderchest • /feed</li>
-        <li>Cosmetic particles (basic)</li>
-      </ul>
-      <button class="btn ghost">Purchase In-Game</button>
-    </div>
-
-    <div class="rank-card">
-      <div class="rank-title">Wizard <span class="price">10M</span></div>
-      <p class="desc">Respected spellcaster, master of arcane duels.</p>
-      <ul class="perks">
-        <li>[Wizard] prefix</li>
-        <li>Set 5 homes</li>
-        <li>/fly in safe zones</li>
-        <li>Pets access • VIP lounge</li>
-      </ul>
-      <button class="btn ghost">Purchase In-Game</button>
-    </div>
-
-    <div class="rank-card">
-      <div class="rank-title">Sorcerer <span class="price">20M</span></div>
-      <p class="desc">Bends powerful magic to their will, feared across realms.</p>
-      <ul class="perks">
-        <li>[Sorcerer] prefix</li>
-        <li>Set 7 homes</li>
-        <li>/nick • /repair (cooldown)</li>
-        <li>Cosmetics (advanced auras)</li>
-      </ul>
-      <button class="btn ghost">Purchase In-Game</button>
-    </div>
-
-    <div class="rank-card">
-      <div class="rank-title">Archmage <span class="price">30M</span></div>
-      <p class="desc">The highest magical order — all bow to your mastery.</p>
-      <ul class="perks">
-        <li>[Archmage] animated prefix</li>
-        <li>Set 10 homes</li>
-        <li>/fly everywhere • /heal (5m cd)</li>
-        <li>Priority queue • Exclusive kit</li>
-      </ul>
-      <button class="btn ghost">Purchase In-Game</button>
-    </div>
+    <table id="ranksTable">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>In-Game Cost</th>
+          <th>Price</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Apprentice</td><td>500k</td><td data-usd="2.50" data-eur="2.30" data-gbp="2.00" data-pkr="700" data-inr="200"></td><td>A beginner in the arts, just starting the magical journey.</td></tr>
+        <tr><td>Acolyte</td><td>3M</td><td data-usd="5.00" data-eur="4.60" data-gbp="4.00" data-pkr="1400" data-inr="400"></td><td>A devoted learner of mystical powers.</td></tr>
+        <tr><td>Shaman</td><td>5M</td><td data-usd="7.50" data-eur="7.00" data-gbp="6.00" data-pkr="2100" data-inr="650"></td><td>Connected to ancient forces, harnessing nature’s magic.</td></tr>
+        <tr><td>Wizard</td><td>10M</td><td data-usd="12.00" data-eur="11.00" data-gbp="9.50" data-pkr="3500" data-inr="1000"></td><td>Respected spellcaster, master of arcane duels.</td></tr>
+        <tr><td>Sorcerer</td><td>20M</td><td data-usd="18.00" data-eur="16.50" data-gbp="14.00" data-pkr="5500" data-inr="1500"></td><td>Bends powerful magic to their will, feared across realms.</td></tr>
+        <tr><td>Archmage</td><td>30M</td><td data-usd="25.00" data-eur="23.00" data-gbp="20.00" data-pkr="7500" data-inr="2000"></td><td>The highest magical order — all bow to your mastery.</td></tr>
+      </tbody>
+    </table>
   </div>
-</section>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 MineRival Network • Join: <strong>play.minerival.net</strong></p>
-    </div>
-  </footer>
+  <script>
+    const select = document.getElementById("currency");
+    const rows = document.querySelectorAll("#ranksTable tbody tr td:nth-child(3)");
+
+    function updatePrices() {
+      const cur = select.value.toLowerCase();
+      rows.forEach(td => {
+        td.textContent = td.dataset[cur] + " " + select.value;
+      });
+    }
+
+    select.addEventListener("change", updatePrices);
+    window.onload = updatePrices;
+  </script>
 </body>
 </html>
