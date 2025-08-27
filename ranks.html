@@ -1,52 +1,133 @@
-<nav>
-  <div class="logo">Mine Rival</div>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="ranks.html">Ranks</a></li>
-    <li><a href="store.html">Store</a></li>
-    <li><a href="news.html">News</a></li>
-    <li><a href="rules.html">Rules</a></li>
-    <li><a href="staff.html">Staff</a></li>
-    <li><a href="https://discord.gg/tYgvYrX3vZ" target="_blank">Discord</a></li>
-  </ul>
-</nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mine Rival Ranks</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-<div class="rank-section">
+  <!-- === Navbar === -->
+  <nav>
+    <div class="logo">Mine Rival</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Ranks</a></li>
+      <li><a href="#">Store</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Rules</a></li>
+      <li><a href="#">Staff</a></li>
+      <li><a href="#">Discord</a></li>
+    </ul>
+  </nav>
 
-  <!-- HUB Ranks -->
-  <div class="rank-category">
-    <h2>Global Hub Ranks</h2>
+  <!-- === Hub Ranks Section === -->
+  <section class="rank-section container">
+    <h1>Hub Ranks</h1>
     <div class="rank-cards">
-      <div class="rank-card vip"><h3>VIP</h3><p>Prefix: [VIP]</p><p>Basic gadgets, trail cosmetic</p><p>Price: $1</p></div>
-      <div class="rank-card vip-plus"><h3>VIP+</h3><p>All VIP perks + extra gadgets, lounge access</p><p>Price: $2</p></div>
-      <div class="rank-card vip-pp"><h3>VIP++</h3><p>All VIP+ perks + animated hub cosmetics</p><p>Price: $3</p></div>
-      <div class="rank-card vip-ppp top-rank"><h3>VIP+++ </h3><p>All VIP++ perks + leaderboard tag</p><p>Price: $5</p></div>
-      <div class="rank-card mvp"><h3>MVP</h3><p>All VIP+++ perks + extra emotes, particles</p><p>Price: $8</p></div>
-      <div class="rank-card mvp-plus"><h3>MVP+</h3><p>All MVP perks + more cosmetics, leaderboard tag</p><p>Price: $12</p></div>
-      <div class="rank-card mvp-pp"><h3>MVP++</h3><p>All MVP+ perks + mounts, priority queue</p><p>Price: $20</p></div>
-      <div class="rank-card mvp-ppp top-rank"><h3>MVP+++ </h3><p>All MVP++ perks + exclusive mounts, animated trails</p><p>Price: $35</p></div>
-      <div class="rank-card legend top-rank"><h3>Legend</h3><p>All MVP+++ perks + global queue, unlimited cosmetics</p><p>Price: $50</p></div>
-      <div class="rank-card elite top-rank"><h3>Elite</h3><p>All Legend perks + top Discord role, ultimate effects</p><p>Price: $75</p></div>
+      <div class="rank-card">
+        <h3>VIP</h3>
+        <p>Prefix: [VIP]</p>
+        <p>Basic gadgets, trail cosmetic</p>
+        <p>$1</p>
+      </div>
+      <div class="rank-card">
+        <h3>VIP+</h3>
+        <p>All VIP perks + extra gadgets, lounge access</p>
+        <p>$2</p>
+      </div>
+      <div class="rank-card">
+        <h3>VIP++</h3>
+        <p>All VIP+ perks + animated hub cosmetics</p>
+        <p>$3</p>
+      </div>
+      <div class="rank-card">
+        <h3>VIP+++</h3>
+        <p>All VIP++ perks + leaderboard tag</p>
+        <p>$5</p>
+      </div>
+      <div class="rank-card top-rank">
+        <h3>MVP</h3>
+        <p>All VIP+++ perks + extra emotes, particles</p>
+        <p>$8</p>
+      </div>
+      <div class="rank-card">
+        <h3>MVP+</h3>
+        <p>All MVP perks + more cosmetics, leaderboard tag</p>
+        <p>$12</p>
+      </div>
+      <div class="rank-card">
+        <h3>MVP++</h3>
+        <p>All MVP+ perks + mounts, priority queue</p>
+        <p>$20</p>
+      </div>
+      <div class="rank-card">
+        <h3>MVP+++</h3>
+        <p>All MVP++ perks + exclusive mounts, animated trails</p>
+        <p>$35</p>
+      </div>
+      <div class="rank-card">
+        <h3>Legend</h3>
+        <p>All MVP+++ perks + global queue, unlimited cosmetics</p>
+        <p>$50</p>
+      </div>
+      <div class="rank-card">
+        <h3>Elite</h3>
+        <p>All Legend perks + top Discord role, ultimate effects</p>
+        <p>$75</p>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Lifesteal SMP Ranks -->
-  <div class="rank-category">
-    <h2>Lifesteal SMP Ranks</h2>
+  <!-- === Lifesteal SMP Ranks Section === -->
+  <section class="rank-section container">
+    <h1>Lifesteal SMP Ranks</h1>
     <div class="rank-cards">
-      <div class="rank-card apprentice"><h3>Apprentice</h3><p>Prefix: [Apprentice]</p><p>1 Home, /hat</p><p>Price: $1</p></div>
-      <div class="rank-card acolyte"><h3>Acolyte</h3><p>Prefix: [Acolyte]</p><p>2 Homes, /back, /workbench</p><p>Price: $3</p></div>
-      <div class="rank-card shaman"><h3>Shaman</h3><p>Prefix: [Shaman]</p><p>3 Homes, /feed, /enderchest</p><p>Price: $5</p></div>
-      <div class="rank-card wizard"><h3>Wizard</h3><p>Prefix: [Wizard]</p><p>5 Homes, Pets access</p><p>Price: $10</p></div>
-      <div class="rank-card sorcerer"><h3>Sorcerer</h3><p>Prefix: [Sorcerer]</p><p>7 Homes, /repair, advanced cosmetics</p><p>Price: $20</p></div>
-      <div class="rank-card archmage top-rank"><h3>Archmage</h3><p>Prefix: [Archmage] (animated)</p><p>10 Homes, priority queue, exclusive kit</p><p>Price: $50</p></div>
+      <div class="rank-card">
+        <h3>Apprentice</h3>
+        <p>Prefix: [Apprentice]</p>
+        <p>1 Home, /hat</p>
+        <p>$1</p>
+      </div>
+      <div class="rank-card">
+        <h3>Acolyte</h3>
+        <p>Prefix: [Acolyte]</p>
+        <p>2 Homes, /back, /workbench</p>
+        <p>$3</p>
+      </div>
+      <div class="rank-card">
+        <h3>Shaman</h3>
+        <p>Prefix: [Shaman]</p>
+        <p>3 Homes, /feed, /enderchest</p>
+        <p>$5</p>
+      </div>
+      <div class="rank-card">
+        <h3>Wizard</h3>
+        <p>Prefix: [Wizard]</p>
+        <p>5 Homes, Pets access</p>
+        <p>$10</p>
+      </div>
+      <div class="rank-card">
+        <h3>Sorcerer</h3>
+        <p>Prefix: [Sorcerer]</p>
+        <p>7 Homes, /repair, advanced cosmetics</p>
+        <p>$20</p>
+      </div>
+      <div class="rank-card top-rank">
+        <h3>Archmage</h3>
+        <p>Prefix: [Archmage] (animated)</p>
+        <p>10 Homes, priority queue, exclusive kit</p>
+        <p>$50</p>
+      </div>
     </div>
-  </div>
+  </section>
 
-</div>
+  <!-- === Footer === -->
+  <footer>
+    © 2025 Mine Rival. All rights reserved.
+  </footer>
 
-<footer>
-  &copy; 2025 Mine Rival. All rights reserved.
-</footer>
-
-<script src="script.js"></script>
+</body>
+</html>
