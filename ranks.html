@@ -1,222 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Revix Studio Ranks</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    /* ===== Rank Section ===== */
-    .rank-section {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .rank-category {
-      margin-bottom: 50px;
-    }
-
-    .rank-category h2 {
-      color: #9b59b6;
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 25px;
-      border-bottom: 2px solid #9b59b6;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    .rank-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .rank-card {
-      background: rgba(28, 28, 43, 0.95);
-      border-radius: 12px;
-      padding: 20px;
-      color: #eee;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-      border-left: 5px solid #9b59b6;
-    }
-
-    .rank-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(155, 89, 182, 0.4);
-    }
-
-    .rank-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      color: #9b59b6;
-    }
-
-    .rank-card p {
-      font-size: 0.95rem;
-      margin: 6px 0;
-      line-height: 1.4;
-    }
-
-    /* ===== Highlight / Animated Glow for Top Ranks ===== */
-    .top-rank {
-      position: relative;
-      border-left-color: #ff99ff;
-      box-shadow: 0 0 10px rgba(155, 89, 182, 0.4);
-      overflow: hidden;
-    }
-
-    .top-rank::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(60deg, #9b59b6, #ff66cc, #9b59b6, #ff66cc);
-      animation: glow 3s linear infinite;
-      opacity: 0.3;
-      pointer-events: none;
-    }
-
-    @keyframes glow {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    /* ===== Navbar ===== */
-    nav {
-      background: rgba(15, 15, 30, 0.9);
-      padding: 15px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(10px);
-    }
-
-    nav .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #9b59b6;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-    }
-
-    nav ul li a {
-      color: #eee;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #9b59b6;
-      text-shadow: 0px 0px 8px #9b59b6;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revix Studio Ranks</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav>
-    <div class="logo">Revix Studio</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="ranks.html">Ranks</a></li>
-      <li><a href="store.html">Store</a></li>
-      <li><a href="discord.html">Discord</a></li>
-    </ul>
-  </nav>
+<nav>
+  <div class="logo">Revix Studio</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="ranks.html">Ranks</a></li>
+    <li><a href="store.html">Store</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="rules.html">Rules</a></li>
+    <li><a href="staff.html">Staff</a></li>
+    <li><a href="https://discord.gg/tYgvYrX3vZ" target="_blank">Discord</a></li>
+  </ul>
+</nav>
 
-  <div class="rank-section">
+<div class="rank-section">
 
-    <!-- ===== HUB / GLOBAL RANKS ===== -->
-    <div class="rank-category">
-      <h2>Global Hub Ranks</h2>
-      <div class="rank-cards">
-        <div class="rank-card vip"><h3>VIP</h3><p>Prefix: [VIP]</p><p>Basic gadgets, sit/lay, trail cosmetic</p><p>Price: $2</p></div>
-        <div class="rank-card vip-plus"><h3>VIP+</h3><p>All VIP perks + extra gadgets, emotes, lounge access</p><p>Price: $3</p></div>
-        <div class="rank-card vip-pp"><h3>VIP++</h3><p>All VIP+ perks + animated hub cosmetics, bigger crates</p><p>Price: $5</p></div>
-        <div class="rank-card vip-ppp top-rank"><h3>VIP+++ </h3><p>All VIP++ perks + special effects, VIP leaderboard, lounge access</p><p>Price: $10</p></div>
-        <div class="rank-card mvp"><h3>MVP</h3><p>All VIP+++ perks + extra emotes, hub particles</p><p>Price: $15</p></div>
-        <div class="rank-card mvp-plus"><h3>MVP+</h3><p>All MVP perks + more cosmetics, leaderboard tag</p><p>Price: $25</p></div>
-        <div class="rank-card mvp-pp"><h3>MVP++</h3><p>All MVP+ perks + mounts, hub gadgets, priority queue</p><p>Price: $40</p></div>
-        <div class="rank-card mvp-ppp top-rank"><h3>MVP+++ </h3><p>All MVP++ perks + animated trails, exclusive mounts, leaderboard tag</p><p>Price: $80</p></div>
-        <div class="rank-card legend top-rank"><h3>Legend</h3><p>All MVP+++ perks + global priority queue, exclusive mounts, unlimited cosmetics</p><p>Price: $120</p></div>
-        <div class="rank-card elite top-rank"><h3>Elite</h3><p>All Legend perks + ultimate hub effects, top Discord role, exclusive cosmetic control</p><p>Price: $150</p></div>
-      </div>
+  <!-- HUB Ranks -->
+  <div class="rank-category">
+    <h2>Global Hub Ranks</h2>
+    <div class="rank-cards">
+      <div class="rank-card vip"><h3>VIP</h3><p>Prefix: [VIP]</p><p>Basic gadgets, trail cosmetic</p><p>Price: $1</p></div>
+      <div class="rank-card vip-plus"><h3>VIP+</h3><p>All VIP perks + extra gadgets, lounge access</p><p>Price: $2</p></div>
+      <div class="rank-card vip-pp"><h3>VIP++</h3><p>All VIP+ perks + animated hub cosmetics</p><p>Price: $3</p></div>
+      <div class="rank-card vip-ppp top-rank"><h3>VIP+++ </h3><p>All VIP++ perks + leaderboard tag</p><p>Price: $5</p></div>
+      <div class="rank-card mvp"><h3>MVP</h3><p>All VIP+++ perks + extra emotes, particles</p><p>Price: $8</p></div>
+      <div class="rank-card mvp-plus"><h3>MVP+</h3><p>All MVP perks + more cosmetics, leaderboard tag</p><p>Price: $12</p></div>
+      <div class="rank-card mvp-pp"><h3>MVP++</h3><p>All MVP+ perks + mounts, priority queue</p><p>Price: $20</p></div>
+      <div class="rank-card mvp-ppp top-rank"><h3>MVP+++ </h3><p>All MVP++ perks + exclusive mounts, animated trails</p><p>Price: $35</p></div>
+      <div class="rank-card legend top-rank"><h3>Legend</h3><p>All MVP+++ perks + global queue, unlimited cosmetics</p><p>Price: $50</p></div>
+      <div class="rank-card elite top-rank"><h3>Elite</h3><p>All Legend perks + top Discord role, ultimate effects</p><p>Price: $75</p></div>
     </div>
+  </div>
 
-    <!-- ===== LIFESTEAL SMP RANKS ===== -->
-    <div class="rank-category">
-      <h2>Lifesteal SMP Ranks</h2>
-      <div class="rank-cards">
+  <!-- Lifesteal SMP Ranks -->
+  <div class="rank-category">
+    <h2>Lifesteal SMP Ranks</h2>
+    <div class="rank-cards">
+      <div class="rank-card apprentice"><h3>Apprentice</h3><p>Prefix: [Apprentice]</p><p>1 Home, /hat</p><p>Price: $1</p></div>
+      <div class="rank-card acolyte"><h3>Acolyte</h3><p>Prefix: [Acolyte]</p><p>2 Homes, /back, /workbench</p><p>Price: $3</p></div>
+      <div class="rank-card shaman"><h3>Shaman</h3><p>Prefix: [Shaman]</p><p>3 Homes, /feed, /enderchest</p><p>Price: $5</p></div>
+      <div class="rank-card wizard"><h3>Wizard</h3><p>Prefix: [Wizard]</p><p>5 Homes, Pets access</p><p>Price: $10</p></div>
+      <div class="rank-card sorcerer"><h3>Sorcerer</h3><p>Prefix: [Sorcerer]</p><p>7 Homes, /repair, advanced cosmetics</p><p>Price: $20</p></div>
+      <div class="rank-card archmage top-rank"><h3>Archmage</h3><p>Prefix: [Archmage] (animated)</p><p>10 Homes, priority queue, exclusive kit</p><p>Price: $50</p></div>
+    </div>
+  </div>
 
-        <div class="rank-card apprentice">
-          <h3>Apprentice</h3>
-          <p>Prefix: [Apprentice]</p>
-          <p>1 Home</p>
-          <p>/hat command</p>
-          <p>Small daily bonus crate</p>
-          <p>Extra: basic cosmetic trail, small monthly bonus</p>
-          <p>Price: 500k (~$1)</p>
-        </div>
+</div>
 
-        <div class="rank-card acolyte">
-          <h3>Acolyte</h3>
-          <p>Prefix: [Acolyte] + colored chat</p>
-          <p>2 Homes</p>
-          <p>/back + /workbench</p>
-          <p>Improved daily bonus crate</p>
-          <p>Extra: 1 cosmetic particle, monthly reward chest, special chat color</p>
-          <p>Price: 3M (~$3)</p>
-        </div>
+<footer>
+  &copy; 2025 Revix Studio. All rights reserved.
+</footer>
 
-        <div class="rank-card shaman">
-          <h3>Shaman</h3>
-          <p>Prefix: [Shaman]</p>
-          <p>3 Homes</p>
-          <p>/enderchest + /feed</p>
-          <p>Basic cosmetic particles</p>
-          <p>Extra perks: 1 mini-pet, rare monthly crate, custom XP boost</p>
-          <p>Price: 5M (~$5)</p>
-        </div>
-
-        <div class="rank-card wizard">
-          <h3>Wizard</h3>
-          <p>Prefix: [Wizard]</p>
-          <p>5 Homes</p>
-          <p>Pets access + VIP Lounge</p>
-          <p>Monthly bonus crate</p>
-          <p>Extra perks: cosmetic trails, aura particles, XP multiplier, small leaderboard tag</p>
-          <p>Price: 10M (~$10)</p>
-        </div>
-
-        <div class="rank-card sorcerer">
-          <h3>Sorcerer</h3>
-          <p>Prefix: [Sorcerer]</p>
-          <p>7 Homes</p>
-          <p>/repair (cooldown)</p>
-          <p>Advanced cosmetics: aura, trail, small wings</p>
-          <p>Extra perks: exclusive pet, leaderboard icon, larger monthly crates, XP boost</p>
-          <p>Price: 20M (~$20)</p>
-        </div>
-
-        <div class="rank-card archmage top-rank">
-          <h3>Archmage</h3>
-          <p>Prefix: [Archmage] (animated)</p>
-          <p>10 Homes</p>
-          <p>Priority queue</p>
-          <p>Exclusive Archmage kit: enchanted gear + rare items</p>
-          <p>Special cosmetics
+<script src="script.js"></script>
+</body>
+</html>
