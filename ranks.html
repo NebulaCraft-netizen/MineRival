@@ -3,188 +3,165 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MineRival | Ranks</title>
-  <link rel="stylesheet" href="style.css">
-  <script>
-    // Currency Conversion (approx)
-    const rates = {
-      USD: 1,
-      EUR: 0.9,
-      GBP: 0.78,
-      PKR: 278,
-      INR: 83
-    };
-
-    function convertCurrency() {
-      const currency = document.getElementById("currency").value;
-      const elements = document.querySelectorAll("[data-price]");
-      elements.forEach(el => {
-        const usdPrice = parseFloat(el.getAttribute("data-price"));
-        const converted = (usdPrice * rates[currency]).toLocaleString();
-        el.innerText = `${converted} ${currency}`;
-      });
+  <title>Revix Studio Ranks</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Rank Cards Container */
+    .rank-section { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+    .rank-category { margin-bottom: 50px; }
+    .rank-category h2 {
+      color: #9b59b6;
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 25px;
+      border-bottom: 2px solid #9b59b6;
+      display: inline-block;
+      padding-bottom: 5px;
     }
-  </script>
+    .rank-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .rank-card {
+      background: rgba(28, 28, 43, 0.9);
+      border-radius: 12px;
+      padding: 20px;
+      color: #eee;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-left: 5px solid #9b59b6;
+    }
+    .rank-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(155, 89, 182, 0.4);
+    }
+
+    .rank-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .rank-card p { font-size: 0.95rem; margin: 8px 0; line-height: 1.4; }
+
+    /* Colored borders per rank */
+    .vip { border-left-color: #33ccff; }
+    .vip-plus { border-left-color: #00ff99; }
+    .vip-pp { border-left-color: #ff66cc; }
+    .vip-ppp { border-left-color: #ff9900; }
+    .mvp { border-left-color: #1e90ff; }
+    .mvp-plus { border-left-color: #00ffcc; }
+    .mvp-pp { border-left-color: #ff66ff; }
+    .mvp-ppp { border-left-color: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet); }
+    .legend { border-left-color: #ffdd00; }
+    .elite { border-left-color: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet); }
+
+    /* Rainbow Text Animation */
+    .rainbow-text {
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbow 3s linear infinite;
+    }
+
+    @keyframes rainbow {
+      0%{background-position:0%}
+      100%{background-position:100%}
+    }
+
+  </style>
 </head>
 <body>
-  <nav>
-    <div class="logo">MineRival</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="ranks.html">Ranks</a></li>
-      <li><a href="rules.html">Rules</a></li>
-      <li><a href="staff.html">Staff</a></li>
-      <li><a href="news.html">News</a></li>
-      <li><a href="info.html">Info</a></li>
-      <li><a href="ip.html">IP</a></li>
-    </ul>
-  </nav>
 
-  <div class="container">
-    <h1>Ranks</h1>
-    <p>Unlock exclusive abilities, perks, and cosmetics by purchasing ranks using in-game money or real currency.</p>
+  <div class="rank-section">
 
-    <label for="currency">Show prices in:</label>
-    <select id="currency" onchange="convertCurrency()">
-      <option value="USD">USD</option>
-      <option value="EUR">EUR</option>
-      <option value="GBP">GBP</option>
-      <option value="PKR">PKR</option>
-      <option value="INR">INR</option>
-    </select>
+    <!-- ===== HUB / GLOBAL RANKS ===== -->
+    <div class="rank-category">
+      <h2>Global Hub Ranks</h2>
+      <div class="rank-cards">
+        <div class="rank-card vip"><h3>VIP</h3><p>Prefix: [VIP]</p><p>Basic gadgets, sit/lay, trail cosmetic</p></div>
+        <div class="rank-card vip-plus"><h3>VIP+</h3><p>All VIP perks + extra gadgets, emotes, lounge access</p></div>
+        <div class="rank-card vip-pp"><h3>VIP++</h3><p>All VIP+ perks + animated hub cosmetics, bigger crate</p></div>
+        <div class="rank-card vip-ppp"><h3>VIP+++ </h3><p>All VIP++ perks + special effects, exclusive lounge access</p></div>
+        <div class="rank-card mvp"><h3>MVP</h3><p>All VIP+++ perks + more emotes, hub particle effects</p></div>
+        <div class="rank-card mvp-plus"><h3>MVP+</h3><p>All MVP perks + extra cosmetic options, leaderboard tag</p></div>
+        <div class="rank-card mvp-pp"><h3>MVP++</h3><p>All MVP+ perks + mounts, hub gadgets, priority queue</p></div>
+        <div class="rank-card mvp-ppp"><h3 class="rainbow-text">MVP+++ </h3><p>All MVP++ perks + animated rainbow trails, VIP leaderboard, exclusive mounts</p></div>
+        <div class="rank-card legend"><h3>Legend</h3><p>All MVP+++ perks + global priority queue, exclusive mounts, unlimited cosmetics</p></div>
+        <div class="rank-card elite"><h3 class="rainbow-text">Elite</h3><p>All Legend perks + rainbow text, ultimate cosmetic control, top Discord role, exclusive hub effects</p></div>
+      </div>
+    </div>
 
-    <!-- Global Ranks -->
-    <h2>🌍 Global Ranks</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Rank</th>
-          <th>Description</th>
-          <th>In-Game Cost</th>
-          <th>Real Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Apprentice</td>
-          <td>A beginner in the arts, just starting the magical journey.</td>
-          <td>500,000 coins</td>
-          <td data-price="2">2 USD</td>
-        </tr>
-        <tr>
-          <td>Acolyte</td>
-          <td>A devoted learner of mystical powers.</td>
-          <td>3,000,000 coins</td>
-          <td data-price="5">5 USD</td>
-        </tr>
-        <tr>
-          <td>Shaman</td>
-          <td>Connected to ancient forces, harnessing nature’s magic.</td>
-          <td>5,000,000 coins</td>
-          <td data-price="8">8 USD</td>
-        </tr>
-        <tr>
-          <td>Wizard</td>
-          <td>Respected spellcaster, master of arcane duels.</td>
-          <td>10,000,000 coins</td>
-          <td data-price="12">12 USD</td>
-        </tr>
-        <tr>
-          <td>Sorcerer</td>
-          <td>Bends powerful magic to their will, feared across realms.</td>
-          <td>20,000,000 coins</td>
-          <td data-price="18">18 USD</td>
-        </tr>
-        <tr>
-          <td>Archmage</td>
-          <td>The highest magical order — all bow to your mastery.</td>
-          <td>30,000,000 coins</td>
-          <td data-price="25">25 USD</td>
-        </tr>
-      </tbody>
-    </table>
+    <!-- ===== LIFESTEAL SMP RANKS ===== -->
+    <div class="rank-category">
+      <h2>Lifesteal SMP Ranks</h2>
+      <div class="rank-cards">
 
-    <!-- Lifesteal Ranks -->
-    <h2>❤️ Lifesteal Ranks</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Rank</th>
-          <th>Description</th>
-          <th>In-Game Cost</th>
-          <th>Real Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Hunter</td>
-          <td>Survivor of the wild, collecting hearts from foes.</td>
-          <td>1,000,000 coins</td>
-          <td data-price="3">3 USD</td>
-        </tr>
-        <tr>
-          <td>Slayer</td>
-          <td>A feared warrior, thriving in lifesteal battles.</td>
-          <td>5,000,000 coins</td>
-          <td data-price="7">7 USD</td>
-        </tr>
-        <tr>
-          <td>Reaper</td>
-          <td>Steals life effortlessly, unmatched in duels.</td>
-          <td>10,000,000 coins</td>
-          <td data-price="12">12 USD</td>
-        </tr>
-        <tr>
-          <td>Warlord</td>
-          <td>Commands the battlefield, lifesteal master.</td>
-          <td>20,000,000 coins</td>
-          <td data-price="18">18 USD</td>
-        </tr>
-      </tbody>
-    </table>
+        <div class="rank-card apprentice">
+          <h3>Apprentice</h3>
+          <p>Prefix: [Apprentice]</p>
+          <p>1 Home</p>
+          <p>/hat command</p>
+          <p>Small daily bonus crate</p>
+          <p>Extra: basic cosmetic trail, small monthly bonus</p>
+          <p>Price: 500k</p>
+        </div>
 
-    <!-- Practice Ranks -->
-    <h2>⚔️ Practice Ranks</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Rank</th>
-          <th>Description</th>
-          <th>In-Game Cost</th>
-          <th>Real Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Rookie</td>
-          <td>Just entering the arena, eager to learn crystal PvP.</td>
-          <td>500,000 coins</td>
-          <td data-price="2">2 USD</td>
-        </tr>
-        <tr>
-          <td>Challenger</td>
-          <td>Bold fighter, climbing the practice ladder.</td>
-          <td>3,000,000 coins</td>
-          <td data-price="5">5 USD</td>
-        </tr>
-        <tr>
-          <td>Champion</td>
-          <td>Respected crystal duelist, feared in the arena.</td>
-          <td>7,000,000 coins</td>
-          <td data-price="9">9 USD</td>
-        </tr>
-        <tr>
-          <td>Gladiator</td>
-          <td>The ultimate practice warrior, unmatched skill.</td>
-          <td>15,000,000 coins</td>
-          <td data-price="15">15 USD</td>
-        </tr>
-      </tbody>
-    </table>
+        <div class="rank-card acolyte">
+          <h3>Acolyte</h3>
+          <p>Prefix: [Acolyte] + colored chat</p>
+          <p>2 Homes</p>
+          <p>/back + /workbench</p>
+          <p>Improved daily bonus crate</p>
+          <p>Extra: 1 cosmetic particle, monthly reward chest, special chat color</p>
+          <p>Price: 3M</p>
+        </div>
+
+        <div class="rank-card shaman">
+          <h3>Shaman</h3>
+          <p>Prefix: [Shaman]</p>
+          <p>3 Homes</p>
+          <p>/enderchest + /feed</p>
+          <p>Basic cosmetic particles</p>
+          <p>Extra perks: 1 mini-pet, rare monthly crate, custom XP boost</p>
+          <p>Price: 5M</p>
+        </div>
+
+        <div class="rank-card wizard">
+          <h3>Wizard</h3>
+          <p>Prefix: [Wizard]</p>
+          <p>5 Homes</p>
+          <p>Pets access + VIP Lounge</p>
+          <p>Monthly bonus crate</p>
+          <p>Extra perks: cosmetic trails, aura particles, XP multiplier, small leaderboard tag</p>
+          <p>Price: 10M</p>
+        </div>
+
+        <div class="rank-card sorcerer">
+          <h3>Sorcerer</h3>
+          <p>Prefix: [Sorcerer]</p>
+          <p>7 Homes</p>
+          <p>/repair (cooldown)</p>
+          <p>Advanced cosmetics: aura, trail, small wings</p>
+          <p>Extra perks: exclusive pet, leaderboard icon, larger monthly crates, XP boost</p>
+          <p>Price: 20M</p>
+        </div>
+
+        <div class="rank-card archmage">
+          <h3>Archmage</h3>
+          <p>Prefix: [Archmage] (animated)</p>
+          <p>10 Homes</p>
+          <p>Priority queue</p>
+          <p>Exclusive Archmage kit: enchanted gear + rare items</p>
+          <p>Special cosmetics: wings, advanced trails, particles</p>
+          <p>Extra perks: top leaderboard tag, VIP event access, global chat color, monthly epic crate</p>
+          <p>Price: 30M</p>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 
-  <footer>
-    <p>© 2025 MineRival. All Rights Reserved.</p>
-  </footer>
 </body>
 </html>
