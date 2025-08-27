@@ -6,9 +6,17 @@
   <title>Revix Studio Ranks</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Rank Cards Container */
-    .rank-section { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
-    .rank-category { margin-bottom: 50px; }
+    /* ===== Rank Section ===== */
+    .rank-section {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .rank-category {
+      margin-bottom: 50px;
+    }
+
     .rank-category h2 {
       color: #9b59b6;
       text-align: center;
@@ -18,6 +26,7 @@
       display: inline-block;
       padding-bottom: 5px;
     }
+
     .rank-cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -25,7 +34,7 @@
     }
 
     .rank-card {
-      background: rgba(28, 28, 43, 0.9);
+      background: rgba(28, 28, 43, 0.95);
       border-radius: 12px;
       padding: 20px;
       color: #eee;
@@ -33,6 +42,7 @@
       transition: transform 0.3s, box-shadow 0.3s;
       border-left: 5px solid #9b59b6;
     }
+
     .rank-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(155, 89, 182, 0.4);
@@ -41,37 +51,94 @@
     .rank-card h3 {
       font-size: 1.5rem;
       margin-bottom: 10px;
-    }
-    .rank-card p { font-size: 0.95rem; margin: 8px 0; line-height: 1.4; }
-
-    /* Colored borders per rank */
-    .vip { border-left-color: #33ccff; }
-    .vip-plus { border-left-color: #00ff99; }
-    .vip-pp { border-left-color: #ff66cc; }
-    .vip-ppp { border-left-color: #ff9900; }
-    .mvp { border-left-color: #1e90ff; }
-    .mvp-plus { border-left-color: #00ffcc; }
-    .mvp-pp { border-left-color: #ff66ff; }
-    .mvp-ppp { border-left-color: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet); }
-    .legend { border-left-color: #ffdd00; }
-    .elite { border-left-color: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet); }
-
-    /* Rainbow Text Animation */
-    .rainbow-text {
-      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: rainbow 3s linear infinite;
+      color: #9b59b6;
     }
 
-    @keyframes rainbow {
-      0%{background-position:0%}
-      100%{background-position:100%}
+    .rank-card p {
+      font-size: 0.95rem;
+      margin: 6px 0;
+      line-height: 1.4;
+    }
+
+    /* ===== Highlight / Animated Glow for Top Ranks ===== */
+    .top-rank {
+      position: relative;
+      border-left-color: #ff99ff;
+      box-shadow: 0 0 10px rgba(155, 89, 182, 0.4);
+      overflow: hidden;
+    }
+
+    .top-rank::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(60deg, #9b59b6, #ff66cc, #9b59b6, #ff66cc);
+      animation: glow 3s linear infinite;
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    @keyframes glow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* ===== Navbar ===== */
+    nav {
+      background: rgba(15, 15, 30, 0.9);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #9b59b6;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: #eee;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #9b59b6;
+      text-shadow: 0px 0px 8px #9b59b6;
     }
 
   </style>
 </head>
 <body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Revix Studio</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ranks.html">Ranks</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="discord.html">Discord</a></li>
+    </ul>
+  </nav>
 
   <div class="rank-section">
 
@@ -81,14 +148,14 @@
       <div class="rank-cards">
         <div class="rank-card vip"><h3>VIP</h3><p>Prefix: [VIP]</p><p>Basic gadgets, sit/lay, trail cosmetic</p></div>
         <div class="rank-card vip-plus"><h3>VIP+</h3><p>All VIP perks + extra gadgets, emotes, lounge access</p></div>
-        <div class="rank-card vip-pp"><h3>VIP++</h3><p>All VIP+ perks + animated hub cosmetics, bigger crate</p></div>
-        <div class="rank-card vip-ppp"><h3>VIP+++ </h3><p>All VIP++ perks + special effects, exclusive lounge access</p></div>
-        <div class="rank-card mvp"><h3>MVP</h3><p>All VIP+++ perks + more emotes, hub particle effects</p></div>
-        <div class="rank-card mvp-plus"><h3>MVP+</h3><p>All MVP perks + extra cosmetic options, leaderboard tag</p></div>
+        <div class="rank-card vip-pp"><h3>VIP++</h3><p>All VIP+ perks + animated hub cosmetics, bigger crates</p></div>
+        <div class="rank-card vip-ppp top-rank"><h3>VIP+++ </h3><p>All VIP++ perks + special effects, VIP leaderboard, lounge access</p></div>
+        <div class="rank-card mvp"><h3>MVP</h3><p>All VIP+++ perks + extra emotes, hub particles</p></div>
+        <div class="rank-card mvp-plus"><h3>MVP+</h3><p>All MVP perks + more cosmetics, leaderboard tag</p></div>
         <div class="rank-card mvp-pp"><h3>MVP++</h3><p>All MVP+ perks + mounts, hub gadgets, priority queue</p></div>
-        <div class="rank-card mvp-ppp"><h3 class="rainbow-text">MVP+++ </h3><p>All MVP++ perks + animated rainbow trails, VIP leaderboard, exclusive mounts</p></div>
-        <div class="rank-card legend"><h3>Legend</h3><p>All MVP+++ perks + global priority queue, exclusive mounts, unlimited cosmetics</p></div>
-        <div class="rank-card elite"><h3 class="rainbow-text">Elite</h3><p>All Legend perks + rainbow text, ultimate cosmetic control, top Discord role, exclusive hub effects</p></div>
+        <div class="rank-card mvp-ppp top-rank"><h3>MVP+++ </h3><p>All MVP++ perks + animated trails, exclusive mounts, leaderboard tag</p></div>
+        <div class="rank-card legend top-rank"><h3>Legend</h3><p>All MVP+++ perks + global priority queue, exclusive mounts, unlimited cosmetics</p></div>
+        <div class="rank-card elite top-rank"><h3>Elite</h3><p>All Legend perks + ultimate hub effects, top Discord role, exclusive cosmetic control</p></div>
       </div>
     </div>
 
@@ -147,7 +214,7 @@
           <p>Price: 20M</p>
         </div>
 
-        <div class="rank-card archmage">
+        <div class="rank-card archmage top-rank">
           <h3>Archmage</h3>
           <p>Prefix: [Archmage] (animated)</p>
           <p>10 Homes</p>
