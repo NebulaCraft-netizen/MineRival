@@ -2,43 +2,150 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MineRival Network</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>MineRival - Classic Minecraft Server</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background: url('https://i.imgur.com/dYkE9iF.png') repeat;
+      font-family: 'Verdana', Geneva, sans-serif;
+      color: #eee;
+      margin: 0;
+      padding: 0;
+    }
+    #container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: rgba(30, 30, 30, 0.95);
+      border: 3px solid #3a3a3a;
+      border-radius: 10px;
+      box-shadow: 0 0 16px #111;
+      padding: 20px 40px 40px 40px;
+    }
+    h1 {
+      font-family: 'Minecraftia', Verdana, Geneva, sans-serif;
+      color: #00d700;
+      font-size: 2.8em;
+      text-align: center;
+      margin-top: 0;
+      text-shadow: 2px 2px 0 #222;
+    }
+    nav {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    nav a {
+      color: #ffd700;
+      text-decoration: none;
+      margin: 0 15px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      border: 1px solid #444;
+      background: #222;
+      transition: background 0.2s;
+    }
+    nav a:hover {
+      background: #444;
+      color: #fff;
+    }
+    .section {
+      margin-bottom: 32px;
+    }
+    .server-ip {
+      font-size: 1.3em;
+      background: #181818;
+      padding: 10px 0;
+      color: #00ffea;
+      border-radius: 8px;
+      text-align: center;
+      margin: 16px 0;
+      letter-spacing: 1.5px;
+      border: 2px dashed #555;
+    }
+    .button {
+      display: inline-block;
+      background: #00ab00;
+      color: #fff;
+      padding: 10px 26px;
+      border-radius: 8px;
+      font-size: 1.1em;
+      text-decoration: none;
+      margin-top: 8px;
+      margin-bottom: 16px;
+      box-shadow: 0 0 6px #003a00;
+      transition: background 0.2s;
+    }
+    .button:hover {
+      background: #008700;
+    }
+    .rules-list {
+      background: #232323;
+      padding: 16px 24px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      margin: 0;
+      list-style: none;
+    }
+    .footer {
+      text-align: center;
+      color: #aaa;
+      margin-top: 32px;
+      font-size: 0.95em;
+      padding-bottom: 8px;
+    }
+    @media (max-width: 600px) {
+      #container {
+        padding: 10px 4vw;
+      }
+    }
+  </style>
+  <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1 class="logo">MineRival</h1>
+  <div id="container">
+    <h1>MineRival</h1>
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="store.html">Store</a></li>
-        <li><a href="vote.html">Vote</a></li>
-        <li><a href="discord.html">Discord</a></li>
-      </ul>
+      <a href="#home">Home</a>
+      <a href="#server-info">Server Info</a>
+      <a href="#rules">Rules</a>
+      <a href="#contact">Contact</a>
     </nav>
-  </header>
 
-  <section class="hero">
-    <h2>Join the #1 Competitive Minecraft Network</h2>
-    <p>IP: <span class="highlight">play.minerival.net</span></p>
-    <button onclick="navigator.clipboard.writeText('play.minerival.net')">Copy IP</button>
-  </section>
-
-  <section class="gamemodes">
-    <h2>Our Gamemodes</h2>
-    <div class="mode">
-      <h3>⚔ Practice PvP</h3>
-      <p>Fight against the best players with skill-based matchmaking.</p>
+    <div id="home" class="section">
+      <p>Welcome to <strong>MineRival</strong>, a classic Minecraft multiplayer experience inspired by the golden age of Minecraft servers! Join our community, make friends, and explore custom worlds.</p>
+      <div class="server-ip">Server IP: <strong>play.minerival.com</strong></div>
+      <a class="button" href="#server-info">Learn More</a>
     </div>
-    <div class="mode">
-      <h3>❤️ Lifesteal</h3>
-      <p>Unique SMP where killing steals hearts. Form clans & dominate.</p>
-    </div>
-  </section>
 
-  <footer>
-    <p>© 2025 MineRival. Not affiliated with Mojang or Microsoft.</p>
-  </footer>
+    <div id="server-info" class="section">
+      <h2>Server Info</h2>
+      <ul>
+        <li><strong>Version:</strong> 1.20.1</li>
+        <li><strong>Gamemodes:</strong> Survival, Creative, Skyblock, Minigames</li>
+        <li><strong>Discord:</strong> <a href="https://discord.gg/yourserver" target="_blank">Join our Discord</a></li>
+        <li><strong>Website:</strong> <a href="https://github.com/NebulaCraft-netizen/MineRival" target="_blank">MineRival on GitHub</a></li>
+      </ul>
+    </div>
+
+    <div id="rules" class="section">
+      <h2>Rules</h2>
+      <ul class="rules-list">
+        <li>No griefing or stealing</li>
+        <li>Be respectful to all players</li>
+        <li>No hacking or exploiting</li>
+        <li>Keep chat appropriate</li>
+        <li>Follow staff instructions</li>
+      </ul>
+    </div>
+
+    <div id="contact" class="section">
+      <h2>Contact</h2>
+      <p>For support or inquiries, join our <a href="https://discord.gg/yourserver" target="_blank">Discord</a> or email us at <a href="mailto:admin@minerival.com">admin@minerival.com</a>.</p>
+    </div>
+
+    <div class="footer">
+      &copy; 2025 MineRival Minecraft Server<br>
+      Website by NebulaCraft-netizen
+    </div>
+  </div>
 </body>
 </html>
