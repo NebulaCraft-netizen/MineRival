@@ -2,34 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MineRival Store</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>MineRival - Store</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <canvas id="bg-stars"></canvas>
+  <script src="stars.js"></script>
   <header>
-    <h1 class="logo">MineRival Store</h1>
+    <a href="index.html" class="logo"><img src="logo.png" alt="MineRival Logo"><span>MineRival</span></a>
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="store.html" class="active">Store</a></li>
-        <li><a href="vote.html">Vote</a></li>
-        <li><a href="discord.html">Discord</a></li>
-      </ul>
+      <a href="index.html">Home</a>
+      <a href="store.html" class="active">Store</a>
+      <a href="vote.html">Vote</a>
+      <a href="discord.html">Discord</a>
     </nav>
   </header>
-
-  <section class="store">
-    <h2>Ranks</h2>
-    <div class="rank">🧙 Wizard</div>
-    <div class="rank">👑 Noble</div>
-    <div class="rank">📜 Sage</div>
-    <div class="rank">🔮 Shaman</div>
-    <div class="rank">🏹 Ranger</div>
-  </section>
-
+  <main>
+    <h1>Store</h1>
+    <p>Support the server and get awesome perks! Choose a category below:</p>
+    <div class="store-categories">
+      <div class="store-category">
+        <h2>Ranks</h2>
+        <p>Unlock exclusive features and commands!</p>
+        <a href="#" class="btn">Browse Ranks</a>
+      </div>
+      <div class="store-category">
+        <h2>Cosmetics</h2>
+        <p>Stand out with unique tags, pets, and more!</p>
+        <a href="#" class="btn">Browse Cosmetics</a>
+      </div>
+      <div class="store-category">
+        <h2>Crates</h2>
+        <p>Try your luck and win big rewards!</p>
+        <a href="#" class="btn">Browse Crates</a>
+      </div>
+    </div>
+    <p class="warning small">All purchases support server development. Not affiliated with Mojang.</p>
+  </main>
   <footer>
-    <p>Payments handled securely via Tebex. Not affiliated with Mojang or Microsoft.</p>
+    &copy; 2025 MineRival. All rights reserved.
   </footer>
 </body>
 </html>
